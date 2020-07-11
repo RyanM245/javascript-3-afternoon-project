@@ -161,9 +161,14 @@ var myCar = {
 */
 
 //Code Here
-function recordCleaner(){
-  
-}
+const recordCleaner = () => {
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    if (myCar.accidents[i].atFaultForAccident === true) {
+      myCar.accidents[i].atFaultForAccident = false
+      }
+    }
+  }
+
 
 
 ////////// PROBLEM 5 //////////
@@ -183,4 +188,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
-
+const looper = () => {
+  for (let i = 0; i < numsArr.length; i++){
+    for (let j = 0; j < numsArr[i].length; j++){
+      if (numsArr[i][j] % 2 === 0){
+        numsArr[i].splice (j, 1, 'even')
+      }else {
+        numsArr[i].splice (j,1,'odd')
+      }
+    }
+  }
+  return numsArr
+}
